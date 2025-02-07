@@ -163,7 +163,7 @@ COPY --from=cni-plugins-export / /
 FROM scratch AS binaries-linux
 COPY --link --from=runc /usr/bin/runc /buildkit-runc
 # built from https://github.com/tonistiigi/binfmt/releases/tag/buildkit%2Fv7.1.0-30
-COPY --link --from=tonistiigi/binfmt:buildkit-v7.1.0-30@sha256:45dd57b4ba2f24e2354f71f1e4e51f073cb7a28fd848ce6f5f2a7701142a6bf0 / /
+COPY --link --from=tonistiigi/binfmt:buildkit-v9.2.0-47 / /
 COPY --link --from=cni-plugins-export-squashed / /
 COPY --link --from=buildctl /usr/bin/buildctl /
 COPY --link --from=buildkitd /usr/bin/buildkitd /
